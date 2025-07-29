@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title>User Interaction Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h2>Interactions Per User</h2>
+  <canvas id="chart" width="600" height="400"></canvas>
+
+  <script>
+    fetch("/data")
+      .then(res => res.json())
+      .then(data => {
+        const userMap = {};
+        data.forEach(d => {
+          if (!userMap[d.user_id]) userMap[d.user_id] = 0;
+          userMap[d.user_id] += d.interaction;
+        });
+
+        const labels = Object.keys(userMap);
+        const values = Object.values(userMap);
+
+        new Chart(document.getElementById("chart"), {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: "Total Interaction",
+              data: values,
+              backgroundColor: "rgba(54, 162, 235, 0.6)"
+            }]
+          }
+        });
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+httpx==0.28.1
+postgrest-py==0.10.6
+supabase==2.17.0
+gotrue==2.12.3
+realtime==2.6.0
+pydantic==2.11.7
+
+
+pandas==2.2.2
+scikit-learn==1.3.2
+flask==2.3.3
