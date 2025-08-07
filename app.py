@@ -12,8 +12,7 @@ with open("model/knn_model.pkl", "rb") as f:
 
 # Supabase credentials
 SUPABASE_URL = "https://pvefvqwwfvtjnpkzwxjs.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB2ZWZ2cXd3ZnZ0am5wa3p3eGpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM1Njk4NjgsImV4cCI6MjA2OTE0NTg2OH0.of6kjPiBOLWMC85eQKPeOkuo0AXzKkE0H4Qlwt7dcuQ"
-
+SUPABASE_KEY = ""
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # --- API Routes ---
